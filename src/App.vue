@@ -1,12 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view />
+    <Bottom></Bottom>
   </div>
 </template>
+<script>
+import Bottom from '@/components/Bottom.vue'
+export default {
+  components: {
+    Bottom,
+  },
+}
+</script>
 
 <style lang="less">
 #app {
@@ -15,18 +20,61 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
+  margin: 0;
+  padding: 0;
   a {
-    font-weight: bold;
-    color: #2c3e50;
+    text-decoration: none;
+  }
+  li {
+    list-style: none;
+  }
+  em,
+  i {
+    font-style: normal;
+  }
+  img {
+    border: 0;
+    vertical-align: middle;
+  }
+  .button {
+    cursor: pointer;
+  }
+  .color {
+    background-color: #f5f5f5;
+  }
+  .bule {
+    background-color: #2f71bd;
+  }
+  .white {
+    background-color: #ffffff;
+  }
+  .boxshadow {
+    box-shadow: 0px 0px 3px 3px #e2e3e3;
+  }
+  button,
+  input {
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, '\5B8B\4F53', sans-serif;
+    border: 0;
+    outline: none;
+  }
+  .clearfix:before,
+  .clearfix:after {
+    content: '';
+    display: table;
+  }
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  .clearfix:after {
+    clear: both;
+  }
+
+  .clearfix {
+    *zoom: 1;
+  }
+  .fl {
+    float: left;
+  }
+  .fr {
+    float: right;
   }
 }
 </style>
