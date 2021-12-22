@@ -2,10 +2,10 @@
   <div class="login-container">
     <img src="@/assets/img/bear.jpg" alt="" />
     <div class="panel">
-      <input class="name-ipt" type="text" name="" id="" placeholder="输入用户名" />
-      <input class="passwd-ipt" type="passwd" name="" id="" placeholder="输入密码" />
+      <input v-model="name" class="name-ipt" type="text" name="" id="" placeholder="输入用户名" />
+      <input v-model="passwd" class="passwd-ipt" type="passwd" name="" id="" placeholder="输入密码" />
     </div>
-    <div class="login">→</div>
+    <div class="login" @click="login">→</div>
   </div>
 </template>
 
@@ -16,6 +16,28 @@ export default {
       name: '',
       passwd: '',
     }
+  },
+  methods: {
+    async login() {
+      if (this.name === '' && this.passwd === '') {
+        alert('请输入有效的账号和密码')
+      } else {
+        await this.$http({
+          url: '/login',
+          methods: 'post',
+          params: {
+            userName: this.name,
+            userPwd: this.passwd,
+          },
+        }).then(({ data: res }) => {
+          if (res.data === null) {
+            alert(res.msg)
+          } else {
+            this.$router.push('/order')
+          }
+        })
+      }
+    },
   },
 }
 </script>

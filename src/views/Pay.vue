@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { request } from '@/utils/request.js'
 import Top from '@/components/Top.vue'
 import Bottom from '@/components/Bottom.vue'
 import Toolbar from '@/components/Order/Toolbar.vue'

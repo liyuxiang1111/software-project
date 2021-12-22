@@ -8,7 +8,8 @@ import Order from '@/views/Order.vue'
 import User from '@/views/User.vue'
 import Merchant from '@/components/Order/Merchant.vue'
 import Back from '@/components/Order/Back.vue'
-import History from '@/components/Order/History.vue'
+import Pay from '@/views/Pay.vue'
+import Goods from '@/components/Pay/Goods.vue'
 const routes = [
   { path: '/', component: Login },
   { path: '/login', component: Login },
@@ -19,8 +20,12 @@ const routes = [
     children: [
       { path: '', component: Merchant },
       { path: 'back', component: Back },
-      { path: 'history', component: History },
     ],
+  },
+  {
+    path: '/pay',
+    component: Pay,
+    children: [{ path: '', component: Goods }],
   },
 ]
 

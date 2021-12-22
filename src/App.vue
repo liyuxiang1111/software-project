@@ -1,16 +1,10 @@
 <template>
   <div id="app">
     <router-view />
-    <Bottom></Bottom>
   </div>
 </template>
 <script>
-import Bottom from '@/components/Bottom.vue'
-export default {
-  components: {
-    Bottom,
-  },
-}
+export default {}
 </script>
 
 <style lang="less">

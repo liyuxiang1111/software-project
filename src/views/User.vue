@@ -6,12 +6,23 @@
     </div>
     <van-notice-bar left-icon="volume-o" text="欢迎使用外卖狗熊,祝您用餐愉快" />
     <div class="setting">用户设置</div>
-    <div class="logout">退出登录</div>
+    <div class="logout" @click="logout">退出登录</div>
+    <Bottom></Bottom>
   </div>
 </template>
 
 <script>
-export default {}
+import Bottom from '@/components/Bottom.vue'
+export default {
+  components: {
+    Bottom,
+  },
+  methods: {
+    logout() {
+      this.$router.push('/')
+    },
+  },
+}
 </script>
 
 <style lang="less">
